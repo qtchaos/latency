@@ -1,0 +1,86 @@
+version = 1
+revision = 2
+requires-python = ">=3.12"
+
+[[package]]
+name = "click"
+version = "8.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "colorama", marker = "sys_platform == 'win32'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz", hash = "sha256:27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202", size = 286342, upload-time = "2025-05-20T23:19:49.832Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/85/32/10bb5764d90a8eee674e9dc6f4db6a0ab47c8c4d0d83c27f7c39ac415a4d/click-8.2.1-py3-none-any.whl", hash = "sha256:61a3265b914e850b85317d0b3109c7f8cd35a670f963866005d6ef1d5175a12b", size = 102215, upload-time = "2025-05-20T23:19:47.796Z" },
+]
+
+[[package]]
+name = "colorama"
+version = "0.4.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44", size = 27697, upload-time = "2022-10-25T02:36:22.414Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335, upload-time = "2022-10-25T02:36:20.889Z" },
+]
+
+[[package]]
+name = "falcon"
+version = "4.0.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/37/4f/d317952294dee1982cd930c8ee2b8b7fbf04140473882801061b3346c713/falcon-4.0.2.tar.gz", hash = "sha256:58f4b9c9da4c9b1e2c9f396ad7ef897701b3c7c7c87227f0bd1aee40c7fbc525", size = 630121, upload-time = "2024-11-06T19:21:20.751Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/67/db/0b78b7ee3fe7e370ed430b7deabfa524b57a5b9eb32622ce1f1bb7aacf0d/falcon-4.0.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:23b0419a9a025745734022aaa2e65447595e539ba27352b3f59d86b288f614db", size = 2294078, upload-time = "2024-11-06T19:50:22.03Z" },
+    { url = "https://files.pythonhosted.org/packages/63/01/77b5b0214bc4ca717b6c6cbe8c3adaba653a7312c9c51a9b390f66efbce0/falcon-4.0.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:524d7b75f7368fe82e94ed16370db5a27bb4b2d066470cba53f02304264447e8", size = 2186007, upload-time = "2024-11-06T19:50:23.876Z" },
+    { url = "https://files.pythonhosted.org/packages/1d/0c/44abd34e38b88f15c5a7030f48ec079669218af3162de2bd1925e13a46a5/falcon-4.0.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2c6b1d7451d5dee4be9b67a75e2a4a0b024dccffedd4e7c7a09513733b5a11db", size = 11644341, upload-time = "2024-11-06T19:50:26.429Z" },
+    { url = "https://files.pythonhosted.org/packages/5e/f3/0260f70dd080d23372e2ff0e330ca37897ab5e1b4890df281558bda8e34a/falcon-4.0.2-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:59bb4a29626c5e610c62620a1395755e8c7b5509385b80d3637fbc8a604d29a3", size = 12218712, upload-time = "2024-11-06T19:50:29.335Z" },
+    { url = "https://files.pythonhosted.org/packages/8d/f8/704b73fc76cf283504aaacc2f466a08fd5d440cddd8d50b6d5c288f0293b/falcon-4.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f26c9ed2912ee48e2e1e7eca3e7e85ab664ff07bd321097a26e4ad6168059424", size = 11842131, upload-time = "2024-11-06T19:50:32.317Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/9a/53f9ee7ee8758972d92bb3dfb2225a9c382fbd12f684616cab9126420602/falcon-4.0.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:0a12bbf3482b7ef1db0c6727c2ad8be5c3ac777d892e56a170e0b4b93651c915", size = 11346087, upload-time = "2024-11-06T19:50:34.743Z" },
+    { url = "https://files.pythonhosted.org/packages/af/ac/8098957dd5b97ed16788104b7acb33c64689f7ab04e0c6b07d6561182950/falcon-4.0.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:a601de7816138f17bf168262e0bceb128fdd1ea2f29ddae035585b5da9223a21", size = 11992383, upload-time = "2024-11-06T19:50:37.394Z" },
+    { url = "https://files.pythonhosted.org/packages/7a/23/f8a74294b5b0cb5b9e3eb44ccea310a5d480ef95e938704827db0dd97f99/falcon-4.0.2-cp312-cp312-win_amd64.whl", hash = "sha256:eec3feda4a9cd773203401e3cf425728a13bf5055b22243b1452e9ad963634f5", size = 2077409, upload-time = "2024-11-06T19:50:40.396Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/34/71ef64406ac7f83c5726a37c9fcae0578bc9d650de09c32148aa6c58502f/falcon-4.0.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:110b172afe337fbae802f1402c89a5dfe6392f3b8ce4f2ecdfd5cee48f68b805", size = 2257265, upload-time = "2024-11-06T19:50:41.967Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/13/528d074e8a75a9236c9f060685e4cb813fbca774269afc89d31e821d8560/falcon-4.0.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:b3a5db14cf2ef05f8f9630468c03939b86dc16115a5250a1870dac3dca1e04ba", size = 2151133, upload-time = "2024-11-06T19:50:44.614Z" },
+    { url = "https://files.pythonhosted.org/packages/2f/70/8c7bf8bf941238a87debce72fcdc7b2301d6599271a392c8216ea2f5d91e/falcon-4.0.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:14e0b4d41ce29c2b5c5b18021320e9e0977ba47ade46b67face52ee1325e2ea4", size = 11438997, upload-time = "2024-11-06T19:50:46.539Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/43/71e358d36ec4559737d63312d746fb5f8b0e64f1fe273cd6991e567a9225/falcon-4.0.2-cp313-cp313-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:56af3b8838da2e19ae56b4e1bac168669ba257d6941f94933dc4f814fe721c08", size = 12015197, upload-time = "2024-11-06T19:50:49.557Z" },
+    { url = "https://files.pythonhosted.org/packages/7a/70/c10acaa3486748f77d9b0e79aaa19d3023b760bb9b93389ac1883a52e366/falcon-4.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ec939d26dd77f57f08f3e13fb14b4e609c0baf073dc3f0c368f0e4cc10439528", size = 11653687, upload-time = "2024-11-06T19:50:52.091Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/3b/dfdd9bd9f6114a49a55298b12048f1b65d0813b82c28676b956c4444f707/falcon-4.0.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:9bfd751dd898505e17152d7ecfcdc457c9d85bceed7e651a9915183bd4afc86b", size = 11165291, upload-time = "2024-11-06T19:50:54.459Z" },
+    { url = "https://files.pythonhosted.org/packages/01/61/eb3d1d2076df85d5a7c2cd823ba5dbe0a928053a3102effb9006b2851377/falcon-4.0.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:4b85f9c6f50a7465303290cb305404ea5c1ddeff6702179c1a8879c4693b0e5e", size = 11831049, upload-time = "2024-11-06T19:50:58.192Z" },
+    { url = "https://files.pythonhosted.org/packages/bf/c7/268cddb1f84ebe5b402acdf116083658f3fb0dd38a75571e0ee703cef212/falcon-4.0.2-cp313-cp313-win_amd64.whl", hash = "sha256:a410e4023999a74ccf615fafa646b112044b987ef5901c8e5c5b79b163f2b3ba", size = 2052994, upload-time = "2024-11-06T19:51:01.138Z" },
+    { url = "https://files.pythonhosted.org/packages/20/e2/ef821224a9ca9d4bb81d6e7ba60c6fbf3eae2e0dc10d806e6ff21b6dfdc5/falcon-4.0.2-py3-none-any.whl", hash = "sha256:077b2abf001940c6128c9b5872ae8147fe13f6ca333f928d8045d7601a5e847e", size = 318356, upload-time = "2024-11-06T19:21:18.29Z" },
+]
+
+[[package]]
+name = "h11"
+version = "0.16.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz", hash = "sha256:4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1", size = 101250, upload-time = "2025-04-24T03:35:25.427Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl", hash = "sha256:63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86", size = 37515, upload-time = "2025-04-24T03:35:24.344Z" },
+]
+
+[[package]]
+name = "latency"
+version = "1.0.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "falcon" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "falcon", specifier = ">=4.0.2" },
+    { name = "uvicorn", specifier = ">=0.34.3" },
+]
+
+[[package]]
+name = "uvicorn"
+version = "0.34.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+    { name = "h11" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz", hash = "sha256:35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a", size = 76631, upload-time = "2025-06-01T07:48:17.531Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6d/0d/8adfeaa62945f90d19ddc461c55f4a50c258af7662d34b6a3d5d1f8646f6/uvicorn-0.34.3-py3-none-any.whl", hash = "sha256:16246631db62bdfbf069b0645177d6e8a77ba950cfedbfd093acef9444e4d885", size = 62431, upload-time = "2025-06-01T07:48:15.664Z" },
+]

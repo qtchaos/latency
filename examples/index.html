@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Latency</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <h1>Latency: 0.0ms</h1>
+        <h2>
+            This is an example meant for testing accurate latency in a browser.
+        </h2>
+        <div id="heatmap-container" class="heatmap-container"></div>
+    </body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            margin: 0;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        h2 {
+            color: #b6b6b6;
+            font-size: 0.9em;
+        }
+        .heatmap-container {
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            display: grid;
+        }
+        .heatmap-cell {
+            width: 100%;
+            height: 100%;
+            outline: none;
+        }
+    </style>
+    <script>
+        function median(arr) {
+            if (!arr.length) return undefined;
+            const s = [...arr].sort((a, b) => a - b);
+            const mid = Math.floor(s.length / 2);
+            return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+        }
+
+        function getColorForLatency(latency, min, max) {
+            // Normalize latency to 0-1 range
+            const normalized = Math.min(
+                Math.max((latency - min) / (max - min), 0),
+                1
+            );
+
+            // Green to yellow to red gradient
+            let r, g;
+            if (normalized < 0.5) {
+                // Green to yellow
+                r = Math.floor(255 * normalized * 2);
+                g = 255;
+            } else {
+                // Yellow to red
+                r = 255;
+                g = Math.floor(255 * (1 - normalized) * 2);
+            }
+
+            return `rgb(${r}, ${g}, 0)`;
+        }
+
+        function initializeHeatmap(totalCells) {
+            const gridSize = Math.ceil(Math.sqrt(totalCells));
+            const heatmapContainer =
+                document.getElementById("heatmap-container");
+            heatmapContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+            heatmapContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+
+            // Create all cells initially dark
+            const totalGridCells = gridSize * gridSize;
+            for (let i = 0; i < totalGridCells; i++) {
+                const cell = document.createElement("div");
+                cell.className = "heatmap-cell";
+                cell.id = `cell-${i}`;
+                heatmapContainer.appendChild(cell);
+            }
+        }
+
+        function updateHeatmapCell(index, latency, min, max) {
+            const cell = document.getElementById(`cell-${index}`);
+            if (cell) {
+                cell.style.backgroundColor = getColorForLatency(
+                    latency,
+                    min,
+                    max
+                );
+                cell.title = `${latency.toFixed(2)} ms`;
+            }
+        }
+
+        // START OF WHAT YOU NEED
+        async function measureLatency() {
+            return new Promise((resolve) => {
+                const url = `http://localhost:8000/?t=${Date.now()}`;
+                const img = new Image();
+                img.src = url;
+                img.onload = () => {
+                    const entry = performance
+                        .getEntriesByType("resource")
+                        .find((e) => e.name === url);
+
+                    performance.clearResourceTimings();
+                    const latency = entry.responseStart - entry.requestStart;
+                    resolve(latency);
+                };
+            });
+        }
+        // END OF WHAT YOU NEED
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const rounds = 1024;
+            let measurements = [];
+            const h1 = document.querySelector("h1");
+
+            initializeHeatmap(rounds);
+
+            for (let i = 0; i < rounds; i++) {
+                const latency = await measureLatency(false);
+                measurements.push(latency);
+
+                // Calculate min and max for color scaling
+                const min = Math.min(...measurements);
+                const max = Math.max(...measurements);
+
+                // Update all previous cells with new color scale
+                measurements.forEach((measurement, index) => {
+                    updateHeatmapCell(index, measurement, min, max);
+                });
+
+                h1.textContent = `Latency: ${median(measurements).toFixed(
+                    2
+                )} ms (${i + 1}/${rounds})`;
+            }
+
+            h1.textContent = `Latency Test Complete - Median: ${median(
+                measurements
+            ).toFixed(2)} ms`;
+        });
+    </script>
+</html>
